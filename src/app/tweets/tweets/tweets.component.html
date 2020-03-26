@@ -1,0 +1,54 @@
+<ActionBar title="Tweets App">
+    </ActionBar>
+<StackLayout>
+    <!--Property Binding-->
+    <!--Event Binding-->
+    <!--<Button [text]="nameLoadTweetsButton"
+            (tap)="loadTweetsButton()"
+            class="btn btn-primary"></Button>-->
+
+    <!--Template Syntax-->
+    <!--<Label text="{{loadTweetsStatus}}"></Label>-->
+
+    <!--Two way data binding-->
+    <!--<TextField [(ngModel)]="quantityTweetsToLoad"></TextField>
+    <Label [text]="quantityTweetsToLoad"></Label>-->
+
+    <!--<Button text="Navigate to Tweet" (tap)="navigateToTweet()"></Button>-->
+
+    <!--Component: directives with a template-->
+    <!--<ns-tweet></ns-tweet>-->
+
+    <!--Structural directives—change the layout by adding and removing elements.-->
+    <ListView height="100%" [items]="tweetsList" (itemTap)="onItemTap($event)" class="list-group">
+        <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+            <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+            <GridLayout columns="auto,*"
+                        rows="auto,auto,auto,auto">
+                <Label  *ngIf="item.lastAction"
+                        row="0" col="1"
+                        [text]="item.lastAction"></Label>
+                <Image  row="1" col="0"
+                        rowSpan="2"
+                        width="50" 
+                        borderRadius="25"
+                        [src]="item.image"></Image>
+                <Label row="1" col="1">
+                    <FormattedString>
+                        <Span [text]="item.author.name" color="red"></Span>
+                        <Span text=" "></Span>
+                        <Span [text]="item.author.twitter"></Span>
+                    </FormattedString>
+                </Label>
+                <Label  row="2" col="1" 
+                        [text]="item.description" 
+                        class="list-group-item"></Label>
+                <Label  row="3" col="1" 
+                        [text]="item.like.likes"
+                        [className]="(item.like.hasTweetBeenLiked) ? 'liked':'no-liked'"
+                        class="list-group-item"></Label>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+    
+</StackLayout>

@@ -1,0 +1,27 @@
+<StackLayout class="ns-layout">
+    <Label 
+        class="ns-title"
+        text="Child Componente"></Label>
+
+    <Label class="number">
+        <FormattedString>
+            <Span color="#1976d2"
+                text="Previous Value:"></Span>
+            <Span text=" "></Span>
+            <Span [text]="previousValue"></Span>
+        </FormattedString>
+    </Label>
+    <Label class="number">
+        <FormattedString>
+            <Span color="red"
+                text="Current Value:"></Span>
+            <Span text=" "></Span>
+            <Span [text]="value"></Span>
+        </FormattedString>
+    </Label>
+
+    <Label class="ns-subtitle" text="LifeCycle Hooks | Changes detected"></Label>
+    <StackLayout *ngFor="let log of logs" class="list-group-item">
+        <Label [text]="log"></Label>
+    </StackLayout>
+</StackLayout>

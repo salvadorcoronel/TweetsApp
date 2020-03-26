@@ -1,0 +1,27 @@
+/* Add mobile styles for the component here.  */
+.tw-gridlayout {
+  FlexboxLayout {
+    padding: 8;
+    border-top-width: 1;
+    border-left-width: 1;
+  }
+}
+
+.tw-label {
+  padding: 8;
+  color: white;
+  font-size: 14;
+  &.one {
+    background-color: black;
+  }
+  &.two {
+    background-color: yellow;
+    color: black;
+  }
+  &.three {
+    background-color: blue;
+  }
+  &.four {
+    background-color: red;
+  }
+}

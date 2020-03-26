@@ -1,0 +1,32 @@
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+Button.-primary {
+    font-size: 18;
+}
+
+.liked {
+    color: blue;
+}
+
+.center {
+    text-align: center;
+}
+
+.ns-layout {
+    border-width: 1;
+    margin: 4;
+    padding: 4;
+}
+
+.ns-title{
+    text-align: left;
+    font-weight: bold;
+    font-size: 14;
+}
+
+.ns-subtitle{
+    text-align: left;
+    font-weight: bold;
+}
+
+@import 'styles/components/button';

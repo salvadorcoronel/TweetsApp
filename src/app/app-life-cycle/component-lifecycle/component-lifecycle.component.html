@@ -1,0 +1,53 @@
+<ActionBar title="Component Life Cycle">
+</ActionBar>
+<ScrollView orientation="vertical">
+    <GridLayout 
+        rows="auto,auto,auto,auto,auto,*"
+        columns="*"
+        class="ns-layout">
+        <Label 
+            row="0"
+            col="0"
+            text="Parent Component"
+            class="ns-title"></Label>
+        <Label
+            row="1"
+            col="0"
+            class="p-12"
+            textWrap="true">
+            <FormattedString>
+                <Span 
+                    text="You need to see logs in the terminal. Search the ComponentLyfeCycle"></Span>
+                <Span text=" "></Span>
+                <Span text="ComponentLyfeCycle" color="red"></Span>
+                <Span text=" "></Span>
+                <Span text="word in your terminal:"></Span>
+            </FormattedString>
+        </Label>
+        <Button 
+            row="2"
+            col="0"
+            text="Update Value of ChildComponentLifeCycleNumber"
+            (tap)="updateValue()"
+            class="center tw-button"></Button>
+
+        <ns-child-component-lifecycle 
+            row="3"
+            col="0"
+            [value]="ngOnChangesComponentLifeCycleNumber"></ns-child-component-lifecycle>
+
+        <Label 
+            row="4"
+            col="0" 
+            class="ns-subtitle" 
+            text="LifeCycle Hooks | Changes detected"></Label>
+
+        <ListView 
+            row="5"
+            col="0" height="400" [items]="logs" (itemTap)="onItemTap($event)" class="list-group">
+            <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                <Label [text]="item"></Label>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+</ScrollView>
